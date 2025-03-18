@@ -2,17 +2,21 @@ import streamlit as st
 import nltk
 import os
 
-# Ensure NLTK data is stored in a fixed directory
+# Manually set the NLTK data environment variable
 nltk_data_path = os.path.join(os.getcwd(), "nltk_data")
+os.environ["NLTK_DATA"] = nltk_data_path
+
+# Ensure the directory exists
 if not os.path.exists(nltk_data_path):
     os.makedirs(nltk_data_path)
 
 nltk.data.path.append(nltk_data_path)
 
-# Download necessary NLTK resources explicitly
-resources = ["punkt", "stopwords", "reuters"]
-for resource in resources:
-    nltk.download(resource, download_dir=nltk_data_path)
+# Force download of required resources
+st.write("Downloading NLTK resources...")
+nltk.download("punkt", download_dir=nltk_data_path)
+nltk.download("stopwords", download_dir=nltk_data_path)
+nltk.download("reuters", download_dir=nltk_data_path)
 
 # Streamlit App Title
 st.title("Information Retrieval with Word2Vec")
