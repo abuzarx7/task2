@@ -2,14 +2,14 @@ import streamlit as st
 import nltk
 import os
 
-# Ensure NLTK data is stored in a valid location
-nltk_data_path = os.path.expanduser("~/.nltk_data")
+# Ensure NLTK data is stored in a fixed directory
+nltk_data_path = os.path.join(os.getcwd(), "nltk_data")
 if not os.path.exists(nltk_data_path):
     os.makedirs(nltk_data_path)
 
 nltk.data.path.append(nltk_data_path)
 
-# Download only the necessary NLTK resources
+# Download necessary NLTK resources explicitly
 resources = ["punkt", "stopwords", "reuters"]
 for resource in resources:
     nltk.download(resource, download_dir=nltk_data_path)
