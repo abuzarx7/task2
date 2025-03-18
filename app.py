@@ -1,4 +1,7 @@
+
+import streamlit as st
 # Streamlit App Title
+
 st.title("Information Retrieval with Word2Vec")
 
 # Load necessary libraries
@@ -11,7 +14,7 @@ from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-import streamlit as st
+
 
 
 # Download necessary NLTK datasets
