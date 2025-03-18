@@ -2,21 +2,8 @@ import streamlit as st
 import nltk
 import os
 
-# Manually set the NLTK data environment variable
-nltk_data_path = os.path.join(os.getcwd(), "nltk_data")
-os.environ["NLTK_DATA"] = nltk_data_path
-
-# Ensure the directory exists
-if not os.path.exists(nltk_data_path):
-    os.makedirs(nltk_data_path)
-
-nltk.data.path.append(nltk_data_path)
-
-# Force download of required resources
-st.write("Downloading NLTK resources...")
-nltk.download("punkt", download_dir=nltk_data_path)
-nltk.download("stopwords", download_dir=nltk_data_path)
-nltk.download("reuters", download_dir=nltk_data_path)
+# Set the NLTK data path explicitly to match setup.sh
+nltk.data.path.append(os.path.expanduser("$HOME/nltk_data"))
 
 # Streamlit App Title
 st.title("Information Retrieval with Word2Vec")
