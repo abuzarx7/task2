@@ -75,3 +75,10 @@ def plot_embeddings(vectors, labels):
 st.pyplot(fig)
 query = st.text_input('Enter your search query:', '')
 if query:
+    st.write(f'Searching for: {query}')
+    search_results = search_function(query)  # Replace with actual function
+    for result in search_results:
+        st.write(f'Document ID: {result["id"]}')
+        st.write(f'Similarity Score: {result["score"]}')
+        st.write(f'Document Preview: {result["preview"]}')
+        st.write('---')
