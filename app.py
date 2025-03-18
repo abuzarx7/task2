@@ -96,6 +96,11 @@ if query:
     st.write(f'Searching for: {query}')
     search_results = search_function(query)  # Replace with actual function
     for result in search_results:
+        st.markdown(f'#### 📌 **Relevant Document: `{result["id"]}`**')
+        st.write(f'**🔹 Similarity Score:** `{result["score"]:.4f}`')
+        st.text_area('📃 Document Excerpt', result['preview'], height=100, disabled=True)
+        st.write(f'**🤔 Why this document?** This document was found relevant because it shares key terms related to **"{query}"**.')
+        st.markdown('---')  # Add a separator
         st.write(f'Document ID: {result["id"]}')
         st.write(f'Similarity Score: {result["score"]}')
         st.write(f'Document Preview: {result["preview"]}')
