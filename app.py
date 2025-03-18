@@ -98,7 +98,8 @@ if query:
     for result in search_results:
         st.markdown(f'### 📌 {result["id"]}')
         st.write(f'**Similarity Score:** {result["score"]:.4f}')
-        st.text_area('Document Excerpt:', result['preview'], height=80, disabled=True)
+        preview_text = result['preview'].strip() if result['preview'] else '⚠️ No preview available for this document.'
+        st.text_area('Document Excerpt:', preview_text, height=100, disabled=True)
         st.write(f'📖 *Why this document?* This document contains terms relevant to **"{query}"**.')
         st.markdown('---')
         st.write(f'Document ID: {result["id"]}')
