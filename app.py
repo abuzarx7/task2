@@ -11,6 +11,8 @@ from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import streamlit as st
+
 
 # Download necessary NLTK datasets
 nltk.download("reuters")
