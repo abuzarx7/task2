@@ -1,4 +1,15 @@
 import streamlit as st
+
+# Define a dummy search function (replace with actual implementation)
+def search_function(query):
+    # Example mock search results
+    results = [
+        {"id": "training/10576", "score": 0.8033, "preview": "Sample document preview 1..."},
+        {"id": "training/13462", "score": 0.7444, "preview": "Sample document preview 2..."},
+    ]
+    return results
+
+import streamlit as st
 #!/usr/bin/env python
 # coding: utf-8
 
