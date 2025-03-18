@@ -7,6 +7,7 @@ st.title("Information Retrieval with Word2Vec")
 # Load necessary libraries
 import nltk
 nltk.download('punkt')
+nltk.download('stopwords')
 from nltk.corpus import reuters, stopwords
 from gensim.models import Word2Vec
 from nltk.tokenize import word_tokenize
