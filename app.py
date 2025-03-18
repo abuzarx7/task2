@@ -192,7 +192,6 @@ for doc_id, similarity, preview in results:
 # In[1]:
 
 
-get_ipython().system('jupyter nbconvert --to script lab2.ipynb')
 
 
 # In[ ]:
