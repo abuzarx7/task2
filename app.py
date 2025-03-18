@@ -72,7 +72,14 @@ def plot_embeddings(vectors, labels):
         x, y = vectors[i]
         plt.scatter(x, y, color='blue')
         plt.text(x + 0.1, y + 0.1, label, fontsize=9)
-st.pyplot(fig)
+if st.checkbox('Show visualization'):
+    import matplotlib.pyplot as plt
+    fig, ax = plt.subplots()
+    # Ensure vectors[i] is defined before use
+    x, y = [1, 2, 3], [1, 2, 3]  # Replace with actual data
+    ax.scatter(x, y, color='blue')
+    ax.text(x[0] + 0.1, y[0] + 0.1, 'Sample', fontsize=9)
+    st.pyplot(fig)
 query = st.text_input('Enter your search query:', '')
 if query:
     st.write(f'Searching for: {query}')
